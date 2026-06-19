@@ -30,6 +30,15 @@ public class ModModelProvider extends FabricModelProvider {
         generateSlabModels(ModBlocks.DIAMOND_SLAB, blockStateModelGenerator, Blocks.DIAMOND_BLOCK);
 
 
+
+        // chiseled quartz has different top texture
+//        registerParentedItemModel(ModBlocks.)
+        generateStairsModels(ModBlocks.QUARTZ_BRICK_STAIRS, blockStateModelGenerator, Blocks.QUARTZ_BRICKS);
+        generateSlabModels(ModBlocks.QUARTZ_BRICK_SLAB, blockStateModelGenerator, Blocks.QUARTZ_BRICKS);
+        generateStairsModels(ModBlocks.AMETHYST_STAIRS, blockStateModelGenerator, Blocks.AMETHYST_BLOCK);
+        generateSlabModels(ModBlocks.AMETHYST_SLAB, blockStateModelGenerator, Blocks.AMETHYST_BLOCK);
+
+
     }
 
 

@@ -28,7 +28,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LAPIS_STAIRS)
                 .add(ModBlocks.LAPIS_SLAB)
                 .add(ModBlocks.DIAMOND_STAIRS)
-                .add(ModBlocks.DIAMOND_SLAB);
+                .add(ModBlocks.DIAMOND_SLAB)
+
+                .add(ModBlocks.CHISELED_QUARTZ_STAIRS)
+                .add(ModBlocks.CHISELED_QUARTZ_SLAB)
+                .add(ModBlocks.QUARTZ_BRICK_STAIRS)
+                .add(ModBlocks.QUARTZ_BRICK_SLAB)
+                .add(ModBlocks.AMETHYST_STAIRS)
+                .add(ModBlocks.AMETHYST_SLAB);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.IRON_STAIRS)
@@ -54,7 +61,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 .add(ModBlocks.EMERALD_STAIRS)
                 .add(ModBlocks.LAPIS_STAIRS)
-                .add(ModBlocks.DIAMOND_STAIRS);
+                .add(ModBlocks.DIAMOND_STAIRS)
+
+                .add(ModBlocks.CHISELED_QUARTZ_STAIRS)
+                .add(ModBlocks.QUARTZ_BRICK_STAIRS)
+                .add(ModBlocks.AMETHYST_STAIRS);
 
         getOrCreateTagBuilder(BlockTags.SLABS)
 
@@ -63,7 +74,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
                 .add(ModBlocks.EMERALD_SLAB)
                 .add(ModBlocks.LAPIS_SLAB)
-                .add(ModBlocks.DIAMOND_SLAB);
+                .add(ModBlocks.DIAMOND_SLAB)
+
+                .add(ModBlocks.CHISELED_QUARTZ_SLAB)
+                .add(ModBlocks.QUARTZ_BRICK_SLAB)
+                .add(ModBlocks.AMETHYST_SLAB);
 
 
         getOrCreateTagBuilder(BlockTags.GUARDED_BY_PIGLINS)

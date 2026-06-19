@@ -24,6 +24,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.DIAMOND_STAIRS);
         addDrop(ModBlocks.DIAMOND_SLAB, slabDrops(ModBlocks.DIAMOND_SLAB));
 
+        addDrop(ModBlocks.CHISELED_QUARTZ_STAIRS);
+        addDrop(ModBlocks.CHISELED_QUARTZ_SLAB, slabDrops(ModBlocks.CHISELED_QUARTZ_SLAB));
+        addDrop(ModBlocks.QUARTZ_BRICK_STAIRS);
+        addDrop(ModBlocks.QUARTZ_BRICK_SLAB, slabDrops(ModBlocks.QUARTZ_BRICK_SLAB));
+        addDrop(ModBlocks.AMETHYST_STAIRS);
+        addDrop(ModBlocks.AMETHYST_SLAB, slabDrops(ModBlocks.AMETHYST_SLAB));
+
 
     }
 }

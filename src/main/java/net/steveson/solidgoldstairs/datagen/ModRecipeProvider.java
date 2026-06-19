@@ -34,6 +34,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         stairsRecipes(Blocks.DIAMOND_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAMOND_STAIRS, exporter);
         slabRecipes(Blocks.DIAMOND_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAMOND_SLAB, exporter);
 
+        stairsRecipes(Blocks.CHISELED_QUARTZ_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_QUARTZ_STAIRS, exporter);
+        slabRecipes(Blocks.CHISELED_QUARTZ_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_QUARTZ_SLAB, exporter);
+        stairsRecipes(Blocks.QUARTZ_BRICKS, RecipeCategory.BUILDING_BLOCKS, ModBlocks.QUARTZ_BRICK_STAIRS, exporter);
+        slabRecipes(Blocks.QUARTZ_BRICKS, RecipeCategory.BUILDING_BLOCKS, ModBlocks.QUARTZ_BRICK_SLAB, exporter);
+        stairsRecipes(Blocks.AMETHYST_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMETHYST_STAIRS, exporter);
+        slabRecipes(Blocks.AMETHYST_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMETHYST_SLAB, exporter);
+
 
 
 

@@ -48,6 +48,23 @@ public class ModBlocks {
 
 
 
+    public static final Block CHISELED_QUARTZ_STAIRS = registerBlock("chiseled_quartz_stairs",
+            new StairsBlock(Blocks.CHISELED_QUARTZ_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.CHISELED_QUARTZ_BLOCK)));
+    public static final Block CHISELED_QUARTZ_SLAB = registerBlock("chiseled_quartz_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.CHISELED_QUARTZ_BLOCK)));
+
+    public static final Block QUARTZ_BRICK_STAIRS = registerBlock("quartz_brick_stairs",
+            new StairsBlock(Blocks.QUARTZ_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)));
+    public static final Block QUARTZ_BRICK_SLAB = registerBlock("quartz_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.QUARTZ_BRICKS)));
+
+    public static final Block AMETHYST_STAIRS = registerBlock("amethyst_stairs",
+            new StairsBlock(Blocks.AMETHYST_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+    public static final Block AMETHYST_SLAB = registerBlock("amethyst_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+
+
+
 
 
 
@@ -64,6 +81,13 @@ public class ModBlocks {
         entries.add(LAPIS_SLAB);
         entries.add(DIAMOND_STAIRS);
         entries.add(DIAMOND_SLAB);
+
+        entries.add(CHISELED_QUARTZ_STAIRS);
+        entries.add(CHISELED_QUARTZ_SLAB);
+        entries.add(QUARTZ_BRICK_STAIRS);
+        entries.add(QUARTZ_BRICK_SLAB);
+        entries.add(AMETHYST_STAIRS);
+        entries.add(AMETHYST_SLAB);
 
 
     }
