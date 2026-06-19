@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.steveson.solidgoldstairs.datagen.ModBlockTagProvider;
 import net.steveson.solidgoldstairs.datagen.ModLootTableProvider;
 import net.steveson.solidgoldstairs.datagen.ModModelProvider;
+import net.steveson.solidgoldstairs.datagen.ModRecipeProvider;
 
 public class SolidGoldStairsDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,7 +15,6 @@ public class SolidGoldStairsDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModBlockTagProvider::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
-//		pack.addProvider(ModRecipeProvider::new);
-
+		pack.addProvider(ModRecipeProvider::new);
 	}
 }
