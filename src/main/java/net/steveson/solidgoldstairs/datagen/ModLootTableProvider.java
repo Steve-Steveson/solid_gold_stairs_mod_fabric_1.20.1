@@ -11,7 +11,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
+        addDrop(ModBlocks.COAL_STAIRS);
+        addDrop(ModBlocks.COAL_SLAB, slabDrops(ModBlocks.COAL_SLAB));
         addDrop(ModBlocks.IRON_STAIRS);
         addDrop(ModBlocks.IRON_SLAB, slabDrops(ModBlocks.IRON_SLAB));
         addDrop(ModBlocks.GOLD_STAIRS);
@@ -23,7 +24,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LAPIS_SLAB, slabDrops(ModBlocks.LAPIS_SLAB));
         addDrop(ModBlocks.DIAMOND_STAIRS);
         addDrop(ModBlocks.DIAMOND_SLAB, slabDrops(ModBlocks.DIAMOND_SLAB));
-
+        addDrop(ModBlocks.NETHERITE_STAIRS);
+        addDrop(ModBlocks.NETHERITE_SLAB, slabDrops(ModBlocks.NETHERITE_SLAB));
         addDrop(ModBlocks.CHISELED_QUARTZ_STAIRS);
         addDrop(ModBlocks.CHISELED_QUARTZ_SLAB, slabDrops(ModBlocks.CHISELED_QUARTZ_SLAB));
         addDrop(ModBlocks.QUARTZ_BRICK_STAIRS);

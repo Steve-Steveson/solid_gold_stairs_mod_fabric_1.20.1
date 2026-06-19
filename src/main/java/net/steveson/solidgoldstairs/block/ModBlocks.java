@@ -18,6 +18,10 @@ import net.minecraft.util.Identifier;
 import net.steveson.solidgoldstairs.SolidGoldStairsMod;
 
 public class ModBlocks {
+    public static final Block COAL_STAIRS = registerBlock("coal_stairs",
+            new StairsBlock(Blocks.COAL_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COAL_BLOCK)));
+    public static final Block COAL_SLAB = registerBlock("coal_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.COAL_BLOCK)));
 
     public static final Block IRON_STAIRS = registerBlock("iron_stairs",
             new StairsBlock(Blocks.IRON_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
@@ -46,7 +50,10 @@ public class ModBlocks {
     public static final Block DIAMOND_SLAB = registerBlock("diamond_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 
-
+    public static final Block NETHERITE_STAIRS = registerBlockNetherite("netherite_stairs",
+            new StairsBlock(Blocks.NETHERITE_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+    public static final Block NETHERITE_SLAB = registerBlockNetherite("netherite_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
 
     public static final Block CHISELED_QUARTZ_STAIRS = registerBlock("chiseled_quartz_stairs",
             new StairsBlock(Blocks.CHISELED_QUARTZ_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.CHISELED_QUARTZ_BLOCK)));
@@ -69,7 +76,8 @@ public class ModBlocks {
 
 
     private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
-
+        entries.add(COAL_STAIRS);
+        entries.add(COAL_SLAB);
         entries.add(IRON_STAIRS);
         entries.add(IRON_SLAB);
         entries.add(GOLD_STAIRS);
@@ -81,7 +89,8 @@ public class ModBlocks {
         entries.add(LAPIS_SLAB);
         entries.add(DIAMOND_STAIRS);
         entries.add(DIAMOND_SLAB);
-
+        entries.add(NETHERITE_STAIRS);
+        entries.add(NETHERITE_SLAB);
         entries.add(CHISELED_QUARTZ_STAIRS);
         entries.add(CHISELED_QUARTZ_SLAB);
         entries.add(QUARTZ_BRICK_STAIRS);
@@ -100,10 +109,19 @@ public class ModBlocks {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(SolidGoldStairsMod.MOD_ID, name), block);
     }
-
     private static Item registerBlockItem(String name, Block block) {
         return Registry.register(Registries.ITEM, new Identifier(SolidGoldStairsMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
+    }
+
+    private static Block registerBlockNetherite(String name, Block block) {
+        registerBlockItemNetherite(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(SolidGoldStairsMod.MOD_ID, name), block);
+    }
+
+    private static Item registerBlockItemNetherite(String name, Block block) {
+        return Registry.register(Registries.ITEM, new Identifier(SolidGoldStairsMod.MOD_ID, name),
+                new BlockItem(block, new FabricItemSettings().fireproof()));
     }
 
 

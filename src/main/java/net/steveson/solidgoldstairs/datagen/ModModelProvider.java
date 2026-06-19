@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
+import net.steveson.solidgoldstairs.SolidGoldStairsMod;
 import net.steveson.solidgoldstairs.block.ModBlocks;
 
 
@@ -16,7 +17,8 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
+        generateStairsModels(ModBlocks.COAL_STAIRS, blockStateModelGenerator, Blocks.COAL_BLOCK);
+        generateSlabModels(ModBlocks.COAL_SLAB, blockStateModelGenerator, Blocks.COAL_BLOCK);
         generateStairsModels(ModBlocks.IRON_STAIRS, blockStateModelGenerator, Blocks.IRON_BLOCK);
         generateSlabModels(ModBlocks.IRON_SLAB, blockStateModelGenerator, Blocks.IRON_BLOCK);
         generateStairsModels(ModBlocks.GOLD_STAIRS, blockStateModelGenerator, Blocks.GOLD_BLOCK);
@@ -28,11 +30,14 @@ public class ModModelProvider extends FabricModelProvider {
         generateSlabModels(ModBlocks.LAPIS_SLAB, blockStateModelGenerator, Blocks.LAPIS_BLOCK);
         generateStairsModels(ModBlocks.DIAMOND_STAIRS, blockStateModelGenerator, Blocks.DIAMOND_BLOCK);
         generateSlabModels(ModBlocks.DIAMOND_SLAB, blockStateModelGenerator, Blocks.DIAMOND_BLOCK);
-
-
-
+        generateStairsModels(ModBlocks.NETHERITE_STAIRS, blockStateModelGenerator, Blocks.NETHERITE_BLOCK);
+        generateSlabModels(ModBlocks.NETHERITE_SLAB, blockStateModelGenerator, Blocks.NETHERITE_BLOCK);
         // chiseled quartz has different top texture
-//        registerParentedItemModel(ModBlocks.)
+//        blockStateModelGenerator.registerParentedItemModel(ModBlocks.CHISELED_QUARTZ_STAIRS,
+
+
+//                ModBlocks.CHISELED_QUARTZ_STAIRS.getLootTableId());
+//                new Identifier(SolidGoldStairsMod.MOD_ID, ModBlocks.CHISELED_QUARTZ_STAIRS.getTranslationKey()));
         generateStairsModels(ModBlocks.QUARTZ_BRICK_STAIRS, blockStateModelGenerator, Blocks.QUARTZ_BRICKS);
         generateSlabModels(ModBlocks.QUARTZ_BRICK_SLAB, blockStateModelGenerator, Blocks.QUARTZ_BRICKS);
         generateStairsModels(ModBlocks.AMETHYST_STAIRS, blockStateModelGenerator, Blocks.AMETHYST_BLOCK);

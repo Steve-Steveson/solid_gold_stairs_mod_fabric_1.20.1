@@ -21,7 +21,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-
+        stairsRecipes(Blocks.COAL_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COAL_STAIRS, exporter);
+        slabRecipes(Blocks.COAL_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COAL_SLAB, exporter);
         stairsRecipes(Blocks.IRON_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.IRON_STAIRS, exporter);
         slabRecipes(Blocks.IRON_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.IRON_SLAB, exporter);
         stairsRecipes(Blocks.GOLD_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLD_STAIRS, exporter);
@@ -33,7 +34,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         slabRecipes(Blocks.LAPIS_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LAPIS_SLAB, exporter);
         stairsRecipes(Blocks.DIAMOND_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAMOND_STAIRS, exporter);
         slabRecipes(Blocks.DIAMOND_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIAMOND_SLAB, exporter);
-
+        stairsRecipes(Blocks.NETHERITE_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.NETHERITE_STAIRS, exporter);
+        slabRecipes(Blocks.NETHERITE_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.NETHERITE_SLAB, exporter);
         stairsRecipes(Blocks.CHISELED_QUARTZ_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_QUARTZ_STAIRS, exporter);
         slabRecipes(Blocks.CHISELED_QUARTZ_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_QUARTZ_SLAB, exporter);
         stairsRecipes(Blocks.QUARTZ_BRICKS, RecipeCategory.BUILDING_BLOCKS, ModBlocks.QUARTZ_BRICK_STAIRS, exporter);
