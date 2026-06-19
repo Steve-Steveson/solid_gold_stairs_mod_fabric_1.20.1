@@ -24,12 +24,36 @@ public class ModBlocks {
     public static final Block IRON_SLAB = registerBlock("iron_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
+    public static final Block GOLD_STAIRS = registerBlock("gold_stairs",
+            new StairsBlock(Blocks.GOLD_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
+
+
+
+
+    public static final Block EMERALD_STAIRS = registerBlock("emerald_stairs",
+            new StairsBlock(Blocks.EMERALD_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
+
+
+    public static final Block LAPIS_STAIRS = registerBlock("lapis_stairs",
+            new StairsBlock(Blocks.LAPIS_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.LAPIS_BLOCK)));
+
+
+
+
 
 
 
     private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
+
         entries.add(IRON_STAIRS);
         entries.add(IRON_SLAB);
+        entries.add(GOLD_STAIRS);
+
+
+        entries.add(EMERALD_STAIRS);
+
+        entries.add(LAPIS_STAIRS);
+
     }
 
 
