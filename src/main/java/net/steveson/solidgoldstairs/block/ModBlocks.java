@@ -26,17 +26,25 @@ public class ModBlocks {
 
     public static final Block GOLD_STAIRS = registerBlock("gold_stairs",
             new StairsBlock(Blocks.GOLD_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
-
+    public static final Block GOLD_SLAB = registerBlock("gold_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
 
 
 
     public static final Block EMERALD_STAIRS = registerBlock("emerald_stairs",
             new StairsBlock(Blocks.EMERALD_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
-
+    public static final Block EMERALD_SLAB = registerBlock("emerald_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
 
     public static final Block LAPIS_STAIRS = registerBlock("lapis_stairs",
             new StairsBlock(Blocks.LAPIS_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.LAPIS_BLOCK)));
+    public static final Block LAPIS_SLAB = registerBlock("lapis_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.LAPIS_BLOCK)));
 
+    public static final Block DIAMOND_STAIRS = registerBlock("diamond_stairs",
+            new StairsBlock(Blocks.DIAMOND_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
+    public static final Block DIAMOND_SLAB = registerBlock("diamond_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 
 
 
@@ -48,11 +56,15 @@ public class ModBlocks {
         entries.add(IRON_STAIRS);
         entries.add(IRON_SLAB);
         entries.add(GOLD_STAIRS);
-
+        entries.add(GOLD_SLAB);
 
         entries.add(EMERALD_STAIRS);
-
+        entries.add(EMERALD_SLAB);
         entries.add(LAPIS_STAIRS);
+        entries.add(LAPIS_SLAB);
+        entries.add(DIAMOND_STAIRS);
+        entries.add(DIAMOND_SLAB);
+
 
     }
 
@@ -69,6 +81,7 @@ public class ModBlocks {
         return Registry.register(Registries.ITEM, new Identifier(SolidGoldStairsMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
+
 
     public static void registerModBlocks() {
         SolidGoldStairsMod.LOGGER.info("Registering ModBlocks for " + SolidGoldStairsMod.MOD_ID);

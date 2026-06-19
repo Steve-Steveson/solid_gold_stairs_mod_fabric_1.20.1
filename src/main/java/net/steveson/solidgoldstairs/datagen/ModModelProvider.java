@@ -5,10 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.StairsBlock;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
-import net.minecraft.data.client.TextureMap;
+import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
 import net.steveson.solidgoldstairs.block.ModBlocks;
 
@@ -21,56 +18,19 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 
-
-//        BlockStateModelGenerator.BlockTexturePool ironPool0 = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.IRON_BLOCK);
-//
-//        TextureMap ironMap = TextureMap.all(Blocks.IRON_BLOCK);
-////        BlockStateModelGenerator.BlockTexturePool ironPool = new BlockStateModelGenerator.BlockTexturePool( ironMap ).base(Blocks.IRON_BLOCK, texturedModel.getModel());
-//        BlockStateModelGenerator.BlockTexturePool ironPool = new BlockStateModelGenerator.BlockTexturePool( ironMap ));
-
-
-//        blockStateModelGenerator.
-
-//        TextureMap textures = TextureMap.all(Blocks.IRON_BLOCK);
-//
-//        Identifier stairsModel = Models.STAIRS.upload(
-//                ModBlocks.IRON_STAIRS,
-//                textures,
-//                blockStateModelGenerator.modelCollector
-//        );
-//
-//        Identifier innerModel = Models.INNER_STAIRS.upload(
-//                ModBlocks.IRON_STAIRS,
-//                textures,
-//                blockStateModelGenerator.modelCollector
-//        );
-//
-//        Identifier outerModel = Models.OUTER_STAIRS.upload(
-//                ModBlocks.IRON_STAIRS,
-//                textures,
-//                blockStateModelGenerator.modelCollector
-//        );
-//
-//        blockStateModelGenerator.blockStateCollector.accept(
-//                BlockStateModelGenerator.createStairsBlockState(
-//                        ModBlocks.IRON_STAIRS,
-//                        innerModel,
-//                        stairsModel,
-//                        outerModel
-//                )
-//        );
-
-
         generateStairsModels(ModBlocks.IRON_STAIRS, blockStateModelGenerator, Blocks.IRON_BLOCK);
-
+        generateSlabModels(ModBlocks.IRON_SLAB, blockStateModelGenerator, Blocks.IRON_BLOCK);
         generateStairsModels(ModBlocks.GOLD_STAIRS, blockStateModelGenerator, Blocks.GOLD_BLOCK);
-
+        generateSlabModels(ModBlocks.GOLD_SLAB, blockStateModelGenerator, Blocks.GOLD_BLOCK);
 
         generateStairsModels(ModBlocks.EMERALD_STAIRS, blockStateModelGenerator, Blocks.EMERALD_BLOCK);
-
+        generateSlabModels(ModBlocks.EMERALD_SLAB, blockStateModelGenerator, Blocks.EMERALD_BLOCK);
         generateStairsModels(ModBlocks.LAPIS_STAIRS, blockStateModelGenerator, Blocks.LAPIS_BLOCK);
+        generateSlabModels(ModBlocks.LAPIS_SLAB, blockStateModelGenerator, Blocks.LAPIS_BLOCK);
+        generateStairsModels(ModBlocks.DIAMOND_STAIRS, blockStateModelGenerator, Blocks.DIAMOND_BLOCK);
+        generateSlabModels(ModBlocks.DIAMOND_SLAB, blockStateModelGenerator, Blocks.DIAMOND_BLOCK);
 
-//        ironPool.slab(ModBlocks.IRON_SLAB);
+
     }
 
 
@@ -106,7 +66,33 @@ public class ModModelProvider extends FabricModelProvider {
         );
     }
 
+    public void generateSlabModels(Block newSlab, BlockStateModelGenerator blockStateModelGenerator, Block inputblock) {
+        TextureMap textures = TextureMap.all(inputblock);
 
+        Identifier bottomModel = Models.SLAB.upload(
+                newSlab,
+                textures,
+                blockStateModelGenerator.modelCollector
+        );
+
+        Identifier topModel = Models.SLAB_TOP.upload(
+                newSlab,
+                textures,
+                blockStateModelGenerator.modelCollector
+        );
+
+        Identifier fullBlockModel =
+                ModelIds.getBlockModelId(inputblock);
+
+        blockStateModelGenerator.blockStateCollector.accept(
+                BlockStateModelGenerator.createSlabBlockState(
+                        newSlab,
+                        bottomModel,
+                        topModel,
+                        fullBlockModel
+                )
+        );
+    }
 
 
 
