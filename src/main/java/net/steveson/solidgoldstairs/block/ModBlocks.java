@@ -16,6 +16,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.steveson.solidgoldstairs.SolidGoldStairsMod;
+import net.steveson.solidgoldstairs.block.custom.PoweredSlabBlock;
+import net.steveson.solidgoldstairs.block.custom.PoweredStairBlock;
 
 public class ModBlocks {
     public static final Block COAL_STAIRS = registerBlock("coal_stairs",
@@ -33,7 +35,10 @@ public class ModBlocks {
     public static final Block GOLD_SLAB = registerBlock("gold_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
 
-
+    public static final Block REDSTONE_STAIRS = registerBlock("redstone_stairs",
+            new PoweredStairBlock(Blocks.REDSTONE_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.REDSTONE_BLOCK)));
+    public static final Block REDSTONE_SLAB = registerBlock("redstone_slab",
+            new PoweredSlabBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_BLOCK)));
 
     public static final Block EMERALD_STAIRS = registerBlock("emerald_stairs",
             new StairsBlock(Blocks.EMERALD_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
@@ -82,7 +87,8 @@ public class ModBlocks {
         entries.add(IRON_SLAB);
         entries.add(GOLD_STAIRS);
         entries.add(GOLD_SLAB);
-
+        entries.add(REDSTONE_STAIRS);
+        entries.add(REDSTONE_SLAB);
         entries.add(EMERALD_STAIRS);
         entries.add(EMERALD_SLAB);
         entries.add(LAPIS_STAIRS);

@@ -27,7 +27,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         slabRecipes(Blocks.IRON_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.IRON_SLAB, exporter);
         stairsRecipes(Blocks.GOLD_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLD_STAIRS, exporter);
         slabRecipes(Blocks.GOLD_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLD_SLAB, exporter);
-
+        stairsRecipes(Blocks.REDSTONE_BLOCK, RecipeCategory.REDSTONE, ModBlocks.REDSTONE_STAIRS, exporter);
+        slabRecipes(Blocks.REDSTONE_BLOCK, RecipeCategory.REDSTONE, ModBlocks.REDSTONE_SLAB, exporter);
         stairsRecipes(Blocks.EMERALD_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.EMERALD_STAIRS, exporter);
         slabRecipes(Blocks.EMERALD_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.EMERALD_SLAB, exporter);
         stairsRecipes(Blocks.LAPIS_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LAPIS_STAIRS, exporter);

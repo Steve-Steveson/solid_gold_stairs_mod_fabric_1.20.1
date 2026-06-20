@@ -23,7 +23,8 @@ public class ModModelProvider extends FabricModelProvider {
         generateSlabModels(ModBlocks.IRON_SLAB, blockStateModelGenerator, Blocks.IRON_BLOCK);
         generateStairsModels(ModBlocks.GOLD_STAIRS, blockStateModelGenerator, Blocks.GOLD_BLOCK);
         generateSlabModels(ModBlocks.GOLD_SLAB, blockStateModelGenerator, Blocks.GOLD_BLOCK);
-
+        generateStairsModels(ModBlocks.REDSTONE_STAIRS, blockStateModelGenerator, Blocks.REDSTONE_BLOCK);
+        generateSlabModels(ModBlocks.REDSTONE_SLAB, blockStateModelGenerator, Blocks.REDSTONE_BLOCK);
         generateStairsModels(ModBlocks.EMERALD_STAIRS, blockStateModelGenerator, Blocks.EMERALD_BLOCK);
         generateSlabModels(ModBlocks.EMERALD_SLAB, blockStateModelGenerator, Blocks.EMERALD_BLOCK);
         generateStairsModels(ModBlocks.LAPIS_STAIRS, blockStateModelGenerator, Blocks.LAPIS_BLOCK);

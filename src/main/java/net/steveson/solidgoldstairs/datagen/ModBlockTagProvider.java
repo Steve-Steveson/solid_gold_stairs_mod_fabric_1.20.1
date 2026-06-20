@@ -23,7 +23,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.IRON_SLAB)
                 .add(ModBlocks.GOLD_STAIRS)
                 .add(ModBlocks.GOLD_SLAB)
-
+                .add(ModBlocks.REDSTONE_STAIRS)
+                .add(ModBlocks.REDSTONE_SLAB)
                 .add(ModBlocks.EMERALD_STAIRS)
                 .add(ModBlocks.EMERALD_SLAB)
                 .add(ModBlocks.LAPIS_STAIRS)
@@ -62,7 +63,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.COAL_STAIRS)
                 .add(ModBlocks.IRON_STAIRS)
                 .add(ModBlocks.GOLD_STAIRS)
-
+                .add(ModBlocks.REDSTONE_STAIRS)
                 .add(ModBlocks.EMERALD_STAIRS)
                 .add(ModBlocks.LAPIS_STAIRS)
                 .add(ModBlocks.DIAMOND_STAIRS)
@@ -75,7 +76,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.COAL_SLAB)
                 .add(ModBlocks.IRON_SLAB)
                 .add(ModBlocks.GOLD_SLAB)
-
+                .add(ModBlocks.REDSTONE_SLAB)
                 .add(ModBlocks.EMERALD_SLAB)
                 .add(ModBlocks.LAPIS_SLAB)
                 .add(ModBlocks.DIAMOND_SLAB)
@@ -83,6 +84,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.CHISELED_QUARTZ_SLAB)
                 .add(ModBlocks.QUARTZ_BRICK_SLAB)
                 .add(ModBlocks.AMETHYST_SLAB);
+
 
 
         getOrCreateTagBuilder(BlockTags.GUARDED_BY_PIGLINS)
