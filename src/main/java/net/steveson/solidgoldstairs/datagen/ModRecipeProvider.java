@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
@@ -44,7 +45,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         stairsRecipes(Blocks.AMETHYST_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMETHYST_STAIRS, exporter);
         slabRecipes(Blocks.AMETHYST_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.AMETHYST_SLAB, exporter);
 
-
+        stairsRecipes(Blocks.OXIDIZED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.OXIDIZED_COPPER_STAIRS, exporter);
+        stairsRecipes(Blocks.WEATHERED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WEATHERED_COPPER_STAIRS, exporter);
+        stairsRecipes(Blocks.EXPOSED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.EXPOSED_COPPER_STAIRS, exporter);
+        stairsRecipes(Blocks.COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_STAIRS, exporter);
+        stairsRecipes(Blocks.WAXED_OXIDIZED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS, exporter);
+        stairsRecipes(Blocks.WAXED_WEATHERED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_WEATHERED_COPPER_STAIRS, exporter);
+        stairsRecipes(Blocks.WAXED_EXPOSED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_EXPOSED_COPPER_STAIRS, exporter);
+        stairsRecipes(Blocks.WAXED_COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_COPPER_STAIRS, exporter);
 
         slabRecipes(Blocks.OXIDIZED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.OXIDIZED_COPPER_SLAB, exporter);
         slabRecipes(Blocks.WEATHERED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WEATHERED_COPPER_SLAB, exporter);
@@ -55,10 +63,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         slabRecipes(Blocks.WAXED_EXPOSED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_EXPOSED_COPPER_SLAB, exporter);
         slabRecipes(Blocks.WAXED_COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_COPPER_SLAB, exporter);
 
-
-
-
-
+        waxCraftingRecipe(ModBlocks.OXIDIZED_COPPER_STAIRS, ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS, exporter);
+        waxCraftingRecipe(ModBlocks.WEATHERED_COPPER_STAIRS, ModBlocks.WAXED_WEATHERED_COPPER_STAIRS, exporter);
+        waxCraftingRecipe(ModBlocks.EXPOSED_COPPER_STAIRS, ModBlocks.WAXED_EXPOSED_COPPER_STAIRS, exporter);
+        waxCraftingRecipe(ModBlocks.COPPER_STAIRS, ModBlocks.WAXED_COPPER_STAIRS, exporter);
+        waxCraftingRecipe(ModBlocks.OXIDIZED_COPPER_SLAB, ModBlocks.WAXED_OXIDIZED_COPPER_SLAB, exporter);
+        waxCraftingRecipe(ModBlocks.WEATHERED_COPPER_SLAB, ModBlocks.WAXED_WEATHERED_COPPER_SLAB, exporter);
+        waxCraftingRecipe(ModBlocks.EXPOSED_COPPER_SLAB, ModBlocks.WAXED_EXPOSED_COPPER_SLAB, exporter);
+        waxCraftingRecipe(ModBlocks.COPPER_SLAB, ModBlocks.WAXED_COPPER_SLAB, exporter);
     }
 
 
@@ -83,6 +95,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(SolidGoldStairsMod.MOD_ID, "stonecutting/" + getRecipeName(output)));
     }
 
-
+    private static void waxCraftingRecipe(Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output)
+                .input(input)
+                .input(Items.HONEYCOMB)
+//                .group(reverseGroup)
+                .criterion(hasItem(input), conditionsFromItem(input))
+                .offerTo(exporter, new Identifier(SolidGoldStairsMod.MOD_ID, "crafting/" + getRecipeName(output) + "_from_honeycomb"));
+    }
 
 }

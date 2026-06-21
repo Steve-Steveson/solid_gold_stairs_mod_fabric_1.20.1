@@ -40,7 +40,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.AMETHYST_STAIRS)
                 .add(ModBlocks.AMETHYST_SLAB)
 
-
+                .add(ModBlocks.OXIDIZED_COPPER_STAIRS)
+                .add(ModBlocks.WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.COPPER_STAIRS)
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_COPPER_STAIRS)
 
                 .add(ModBlocks.OXIDIZED_COPPER_SLAB)
                 .add(ModBlocks.WEATHERED_COPPER_SLAB)
@@ -57,7 +64,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LAPIS_STAIRS)
                 .add(ModBlocks.LAPIS_SLAB)
 
-
+                .add(ModBlocks.OXIDIZED_COPPER_STAIRS)
+                .add(ModBlocks.WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.COPPER_STAIRS)
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_COPPER_STAIRS)
 
                 .add(ModBlocks.OXIDIZED_COPPER_SLAB)
                 .add(ModBlocks.WEATHERED_COPPER_SLAB)
@@ -90,8 +104,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.NETHERITE_STAIRS)
                 .add(ModBlocks.CHISELED_QUARTZ_STAIRS)
                 .add(ModBlocks.QUARTZ_BRICK_STAIRS)
-                .add(ModBlocks.AMETHYST_STAIRS);
+                .add(ModBlocks.AMETHYST_STAIRS)
 
+                .add(ModBlocks.OXIDIZED_COPPER_STAIRS)
+                .add(ModBlocks.WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.COPPER_STAIRS)
+                .add(ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_WEATHERED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_EXPOSED_COPPER_STAIRS)
+                .add(ModBlocks.WAXED_COPPER_STAIRS);
         getOrCreateTagBuilder(BlockTags.SLABS)
                 .add(ModBlocks.COAL_SLAB)
                 .add(ModBlocks.IRON_SLAB)

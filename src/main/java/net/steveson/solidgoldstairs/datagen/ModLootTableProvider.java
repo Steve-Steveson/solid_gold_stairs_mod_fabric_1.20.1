@@ -34,7 +34,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.AMETHYST_STAIRS);
         addDrop(ModBlocks.AMETHYST_SLAB, slabDrops(ModBlocks.AMETHYST_SLAB));
 
-
+        addDrop(ModBlocks.OXIDIZED_COPPER_STAIRS);
+        addDrop(ModBlocks.WEATHERED_COPPER_STAIRS);
+        addDrop(ModBlocks.EXPOSED_COPPER_STAIRS);
+        addDrop(ModBlocks.COPPER_STAIRS);
+        addDrop(ModBlocks.WAXED_OXIDIZED_COPPER_STAIRS);
+        addDrop(ModBlocks.WAXED_WEATHERED_COPPER_STAIRS);
+        addDrop(ModBlocks.WAXED_EXPOSED_COPPER_STAIRS);
+        addDrop(ModBlocks.WAXED_COPPER_STAIRS);
 
         addDrop(ModBlocks.OXIDIZED_COPPER_SLAB, slabDrops(ModBlocks.OXIDIZED_COPPER_SLAB));
         addDrop(ModBlocks.WEATHERED_COPPER_SLAB, slabDrops(ModBlocks.WEATHERED_COPPER_SLAB));
