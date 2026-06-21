@@ -77,21 +77,4 @@ public class PoweredStairBlock extends StairsBlock {
         }
         return 0;
     }
-
-    @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-    }
-
-    //    @Override
-//    public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction) {
-//        if (state.get(FACING).getOpposite() == direction) {
-//            return true;
-//        }
-//        if (state.get(FACING) == direction && state.get(HALF) == BlockHalf.BOTTOM) {
-//            return true;
-//        }
-//
-//        return false;
-//    }
 }

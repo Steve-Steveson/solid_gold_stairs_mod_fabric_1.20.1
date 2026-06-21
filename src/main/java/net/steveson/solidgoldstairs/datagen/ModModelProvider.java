@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.steveson.solidgoldstairs.SolidGoldStairsMod;
 import net.steveson.solidgoldstairs.block.ModBlocks;
@@ -34,11 +35,9 @@ public class ModModelProvider extends FabricModelProvider {
         generateStairsModels(ModBlocks.NETHERITE_STAIRS, blockStateModelGenerator, Blocks.NETHERITE_BLOCK);
         generateSlabModels(ModBlocks.NETHERITE_SLAB, blockStateModelGenerator, Blocks.NETHERITE_BLOCK);
         // chiseled quartz has different top texture
-//        blockStateModelGenerator.registerParentedItemModel(ModBlocks.CHISELED_QUARTZ_STAIRS,
+        generateBlockItemModel(ModBlocks.CHISELED_QUARTZ_STAIRS, blockStateModelGenerator);
+        generateBlockItemModel(ModBlocks.CHISELED_QUARTZ_SLAB, blockStateModelGenerator);
 
-
-//                ModBlocks.CHISELED_QUARTZ_STAIRS.getLootTableId());
-//                new Identifier(SolidGoldStairsMod.MOD_ID, ModBlocks.CHISELED_QUARTZ_STAIRS.getTranslationKey()));
         generateStairsModels(ModBlocks.QUARTZ_BRICK_STAIRS, blockStateModelGenerator, Blocks.QUARTZ_BRICKS);
         generateSlabModels(ModBlocks.QUARTZ_BRICK_SLAB, blockStateModelGenerator, Blocks.QUARTZ_BRICKS);
         generateStairsModels(ModBlocks.AMETHYST_STAIRS, blockStateModelGenerator, Blocks.AMETHYST_BLOCK);
@@ -47,6 +46,12 @@ public class ModModelProvider extends FabricModelProvider {
 
     }
 
+
+
+    public void generateBlockItemModel(Block block, BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerParentedItemModel(block,
+                new Identifier(SolidGoldStairsMod.MOD_ID, "block/" + Registries.BLOCK.getId(block).getPath()));
+    }
 
 
     public void generateStairsModels(Block newStair, BlockStateModelGenerator blockStateModelGenerator, Block inputblock) {
