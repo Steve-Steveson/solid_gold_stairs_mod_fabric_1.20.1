@@ -42,7 +42,7 @@ public class PoweredSlabBlock extends SlabBlock {
             if (direction == Direction.DOWN) {
                 return 7;
             }
-            if (world.getBlockState(pos.offset(direction.getOpposite())).isIn(ModTags.Blocks.LOW_REDSTONE_COMPONENTS)) {
+            if (!world.getBlockState(pos.offset(direction.getOpposite())).isIn(ModTags.Blocks.LOW_REDSTONE_COMPONENTS)) {
                 return 7;
             }
         }
