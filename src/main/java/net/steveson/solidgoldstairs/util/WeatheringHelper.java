@@ -1,0 +1,138 @@
+package net.steveson.solidgoldstairs.util;
+
+import net.minecraft.block.BlockState;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.Degradable;
+import net.minecraft.block.Oxidizable;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+
+
+import java.util.Optional;
+import java.util.function.Function;
+
+// Most of this file is copied from a mod called Copper Age Backport by Smallinger, which is allowed under the MIT License.
+// The rest is splicing in a method from the vanilla code to check neighboring blocks before oxidation.
+
+/**
+ * Utility class for handling custom weathering/oxidation logic.
+ * Use this when blocks can't be registered in vanilla's immutable Oxidizable maps.
+ */
+public class WeatheringHelper {
+
+    /**
+     * Vanilla copper oxidation probability
+     */
+    public static final float OXIDATION_CHANCE = 0.05688889F;
+
+    /**
+     * Applies weathering/oxidation to a block with vanilla probability.
+     *
+     * @param state Current block state
+     * @param level Server level
+     * @param pos Block position
+     * @param random Random source
+     * @param getNextBlock Function that returns the next oxidation stage
+     * @return true if oxidation occurred, false otherwise
+     */
+    public static boolean tryWeather(BlockState state, ServerWorld level, BlockPos pos, Random random,
+                                     Function<Block, Optional<Block>> getNextBlock) {
+        Optional<Block> nextBlock = getNextBlock.apply(state.getBlock());
+
+        if (nextBlock.isPresent() && random.nextFloat() < OXIDATION_CHANCE) {
+//            BlockState newState = nextBlock.get().withPropertiesOf(state);
+//            level.setBlockAndUpdate(pos, newState);
+            applyChangeOverTime2(state, level, pos, random, nextBlock.get());
+            return true;
+        }
+
+        return false;
+    }
+
+    // this method is the one copied from the vanilla code that checks its neighbors to influence weathering probability.
+    private static void applyChangeOverTime2(BlockState pState, ServerWorld pLevel, BlockPos pPos, Random pRandom, Block nextBlock) {
+        Block pBlock = pState.getBlock();
+
+        int i;
+        Enum<?> agedness;
+        if (pBlock instanceof Degradable) {
+            agedness = ((Degradable) pBlock).getDegradationLevel();
+            i = agedness.ordinal();
+        }
+        else {
+            return;
+        }
+        int j = 0;
+        int k = 0;
+
+        for(BlockPos blockpos : BlockPos.iterateOutwards(pPos, 4, 4, 4)) {
+            int l = blockpos.getManhattanDistance(pPos);
+            if (l > 4) {
+                break;
+            }
+
+            if (!blockpos.equals(pPos)) {
+                BlockState blockstate = pLevel.getBlockState(blockpos);
+                Block block = blockstate.getBlock();
+                if (block instanceof Degradable) {
+                    Enum<?> oenum = ((Degradable)block).getDegradationLevel();
+                    if (agedness.getClass() == oenum.getClass()) {
+                        int i1 = oenum.ordinal();
+                        if (i1 < i) {
+                            return;
+                        }
+
+                        if (i1 > i) {
+                            ++k;
+                        } else {
+                            ++j;
+                        }
+                    }
+                }
+            }
+        }
+
+        float f = (float)(k + 1) / (float)(k + j + 1);
+        float f1 = f * f * getChanceModifier(agedness);
+        if (pRandom.nextFloat() < f1) {
+            BlockState newState = nextBlock.getStateWithProperties(pState);
+            pLevel.setBlockState(pPos, newState);
+
+//            this.getNext(pState).ifPresent((p_153039_) -> {
+//                pLevel.setBlockAndUpdate(pPos, p_153039_);
+//            });
+        }
+
+    }
+
+    static float getChanceModifier(Enum<?> pAge) {
+        return pAge == Oxidizable.OxidationLevel.UNAFFECTED ? 0.75F : 1.0F;
+    }
+
+    /**
+     * Checks if a block can weather/oxidize.
+     *
+     * @param state Current block state
+     * @param getNextBlock Function that returns the next oxidation stage
+     * @return true if the block has a next stage
+     */
+    public static boolean canWeather(BlockState state, Function<Block, Optional<Block>> getNextBlock) {
+        return getNextBlock.apply(state.getBlock()).isPresent();
+    }
+
+    /**
+     * Checks if weathering should occur (with vanilla probability).
+     * Use this when you need to handle the state change yourself (e.g., for multi-block structures).
+     *
+     * @param state Current block state
+     * @param level Server level
+     * @param pos Block position
+     * @param random Random source
+     * @return true if weathering should occur
+     */
+    public static boolean shouldWeather(BlockState state, ServerWorld level, BlockPos pos, Random random) {
+        return random.nextFloat() < OXIDATION_CHANCE;
+    }
+}

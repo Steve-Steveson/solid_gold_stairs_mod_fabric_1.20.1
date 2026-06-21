@@ -44,6 +44,16 @@ public class ModModelProvider extends FabricModelProvider {
         generateSlabModels(ModBlocks.AMETHYST_SLAB, blockStateModelGenerator, Blocks.AMETHYST_BLOCK);
 
 
+
+
+        generateSlabModels(ModBlocks.OXIDIZED_COPPER_SLAB, blockStateModelGenerator, Blocks.OXIDIZED_COPPER);
+        generateSlabModels(ModBlocks.WEATHERED_COPPER_SLAB, blockStateModelGenerator, Blocks.WEATHERED_COPPER);
+        generateSlabModels(ModBlocks.EXPOSED_COPPER_SLAB, blockStateModelGenerator, Blocks.EXPOSED_COPPER);
+        generateSlabModels(ModBlocks.COPPER_SLAB, blockStateModelGenerator, Blocks.COPPER_BLOCK);
+        generateSlabModels(ModBlocks.WAXED_OXIDIZED_COPPER_SLAB, blockStateModelGenerator, Blocks.OXIDIZED_COPPER);
+        generateSlabModels(ModBlocks.WAXED_WEATHERED_COPPER_SLAB, blockStateModelGenerator, Blocks.WEATHERED_COPPER);
+        generateSlabModels(ModBlocks.WAXED_EXPOSED_COPPER_SLAB, blockStateModelGenerator, Blocks.EXPOSED_COPPER);
+        generateSlabModels(ModBlocks.WAXED_COPPER_SLAB, blockStateModelGenerator, Blocks.COPPER_BLOCK);
     }
 
 

@@ -46,6 +46,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 
 
+        slabRecipes(Blocks.OXIDIZED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.OXIDIZED_COPPER_SLAB, exporter);
+        slabRecipes(Blocks.WEATHERED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WEATHERED_COPPER_SLAB, exporter);
+        slabRecipes(Blocks.EXPOSED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.EXPOSED_COPPER_SLAB, exporter);
+        slabRecipes(Blocks.COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COPPER_SLAB, exporter);
+        slabRecipes(Blocks.WAXED_OXIDIZED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_OXIDIZED_COPPER_SLAB, exporter);
+        slabRecipes(Blocks.WAXED_WEATHERED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_WEATHERED_COPPER_SLAB, exporter);
+        slabRecipes(Blocks.WAXED_EXPOSED_COPPER, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_EXPOSED_COPPER_SLAB, exporter);
+        slabRecipes(Blocks.WAXED_COPPER_BLOCK, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WAXED_COPPER_SLAB, exporter);
+
+
+
 
 
     }

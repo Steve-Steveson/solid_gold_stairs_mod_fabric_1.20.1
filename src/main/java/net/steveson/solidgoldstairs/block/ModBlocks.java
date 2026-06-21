@@ -5,10 +5,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -16,8 +13,10 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.steveson.solidgoldstairs.SolidGoldStairsMod;
+import net.steveson.solidgoldstairs.block.custom.CopperSlabBlock;
 import net.steveson.solidgoldstairs.block.custom.PoweredSlabBlock;
 import net.steveson.solidgoldstairs.block.custom.PoweredStairBlock;
+import net.steveson.solidgoldstairs.block.custom.UncutWeatheringCopperSlabBlock;
 
 public class ModBlocks {
     public static final Block COAL_STAIRS = registerBlock("coal_stairs",
@@ -78,6 +77,25 @@ public class ModBlocks {
 
 
 
+    public static final Block OXIDIZED_COPPER_SLAB = registerBlock("oxidized_copper_slab",
+            new UncutWeatheringCopperSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, FabricBlockSettings.copyOf(Blocks.OXIDIZED_COPPER)));
+    public static final Block WEATHERED_COPPER_SLAB = registerBlock("weathered_copper_slab",
+            new UncutWeatheringCopperSlabBlock(Oxidizable.OxidationLevel.WEATHERED, FabricBlockSettings.copyOf(Blocks.WEATHERED_COPPER)));
+    public static final Block EXPOSED_COPPER_SLAB = registerBlock("exposed_copper_slab",
+            new UncutWeatheringCopperSlabBlock(Oxidizable.OxidationLevel.EXPOSED, FabricBlockSettings.copyOf(Blocks.EXPOSED_COPPER)));
+    public static final Block COPPER_SLAB = registerBlock("copper_slab",
+            new UncutWeatheringCopperSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
+
+    public static final Block WAXED_OXIDIZED_COPPER_SLAB = registerBlock("waxed_oxidized_copper_slab",
+            new CopperSlabBlock(Oxidizable.OxidationLevel.OXIDIZED, FabricBlockSettings.copyOf(Blocks.WAXED_OXIDIZED_COPPER)));
+    public static final Block WAXED_WEATHERED_COPPER_SLAB = registerBlock("waxed_weathered_copper_slab",
+            new CopperSlabBlock(Oxidizable.OxidationLevel.WEATHERED, FabricBlockSettings.copyOf(Blocks.WAXED_WEATHERED_COPPER)));
+    public static final Block WAXED_EXPOSED_COPPER_SLAB = registerBlock("waxed_exposed_copper_slab",
+            new CopperSlabBlock(Oxidizable.OxidationLevel.EXPOSED, FabricBlockSettings.copyOf(Blocks.WAXED_EXPOSED_COPPER)));
+    public static final Block WAXED_COPPER_SLAB = registerBlock("waxed_copper_slab",
+            new CopperSlabBlock(Oxidizable.OxidationLevel.UNAFFECTED, FabricBlockSettings.copyOf(Blocks.WAXED_COPPER_BLOCK)));
+
+
 
 
     private static void addItemsToBuildingBlocksItemGroup(FabricItemGroupEntries entries) {
@@ -105,6 +123,22 @@ public class ModBlocks {
         entries.add(AMETHYST_SLAB);
 
 
+        entries.add(COPPER_SLAB);
+
+        entries.add(EXPOSED_COPPER_SLAB);
+
+        entries.add(WEATHERED_COPPER_SLAB);
+
+        entries.add(OXIDIZED_COPPER_SLAB);
+
+
+        entries.add(WAXED_COPPER_SLAB);
+
+        entries.add(WAXED_EXPOSED_COPPER_SLAB);
+
+        entries.add(WAXED_WEATHERED_COPPER_SLAB);
+
+        entries.add(WAXED_OXIDIZED_COPPER_SLAB);
     }
 
 
